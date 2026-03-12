@@ -13,6 +13,7 @@ Projekat je rađen u okviru predmeta **Elektronsko poslovanje** na Akademiji str
 * Jednostavna navigacija kroz set kartica.
 
 ## 📸 Izgled aplikacije
+![Prikaz aplikacije](izgledStranice.png)
 
 ## 🛠️ Instalacija
 Samo preuzmite kod i otvorite `index.html` u bilo kom brauzeru.
