@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduCards - Kursevi</title>
+    <link rel="icon" type="image/x-icon" href="Images/books.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/kursevi.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg py-3">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-dark">🎓 EduCards</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="nav">
+                <ul class="navbar-nav ms-auto fw-medium">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Početna</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="kursevi.html">Kursevi</a></li>
+                    <li class="nav-item"><a class="nav-link" href="onama.html">O nama</a></li>
+                    <li class="nav-item"><a class="nav-link" href="kontakt.html">Kontakt</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div id="home">
+            <div class="mb-5">
+                <p class="text-success fw-bold text-uppercase mb-1" style="letter-spacing: 2px; font-size: 16px;">Istraži i uči</p>
+                <h1 class="display-4 fw-bold text-dark">Izaberi oblast <span class="text-success">znanja</span></h1>
+                <p class="text-secondary fs-5">Klikni na karticu i započni interaktivni kviz iz željene oblasti.</p>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="subject-card" onclick="openSubject('science')">
+                        <div class="icon-wrapper">🧬</div>
+                        <h4 class="fw-bold">Nauka</h4>
+                        <p class="text-muted small">Fizika, hemija, biologija</p>
+                        <div class="arrow-btn">➔</div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="subject-card" onclick="openSubject('languages')">
+                        <div class="icon-wrapper">🗣️</div>
+                        <h4 class="fw-bold">Jezici</h4>
+                        <p class="text-muted small">Engleski, Nemački, Španski</p>
+                        <div class="arrow-btn">➔</div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="subject-card" onclick="openSubject('math')">
+                        <div class="icon-wrapper">📐</div>
+                        <h4 class="fw-bold">Matematika</h4>
+                        <p class="text-muted small">Algebra, geometrija, logika</p>
+                        <div class="arrow-btn">➔</div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="subject-card" onclick="openSubject('history')">
+                        <div class="icon-wrapper">📜</div>
+                        <h4 class="fw-bold">Istorija</h4>
+                        <p class="text-muted small">Stari vek, srednji vek, moderna era</p>
+                        <div class="arrow-btn">➔</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="quiz" class="d-none">
+            <div class="d-flex justify-content-between align-items-center mb-4 quiz-controls">
+                <button class="btn btn-outline-dark rounded-pill px-4" onclick="goHome()">⬅ Nazad</button>
+                <div class="timer-box p-2 px-4 bg-white rounded-pill shadow-sm fw-bold">
+                    ⏱️ <span id="timer">15</span>s
+                </div>
+                <h5 id="progressText" class="m-0 fw-bold text-dark"></h5>
+            </div>
+
+            <div class="progress mb-4 shadow-sm" style="height: 12px; border-radius: 10px;">
+                <div id="progressBar" class="progress-bar"></div>
+            </div>
+
+            <div class="card-container d-flex justify-content-center mt-5">
+                <div class="card-flip" onclick="flipCard()">
+                    <div class="card-inner" id="card-inner">
+                        <div class="card-front" id="question"></div>
+                        <div class="card-back" id="answer"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-5">
+                <input type="text" id="userAnswer" class="form-control w-50 mx-auto mb-3 p-3 shadow-sm rounded-pill border-0 text-center" placeholder="Unesi odgovor...">
+                <button class="btn btn-warning px-5 py-2 fw-bold rounded-pill shadow-sm" onclick="checkAnswer()">Proveri</button>
+                
+                <div id="result" class="mt-3 fs-5 fw-bold"></div>
+                
+                <div class="stats-box mt-3 text-dark bg-white d-inline-block px-4 py-2 rounded-pill shadow-sm">
+                    Poeni: <span id="score" class="text-success fw-bold">0</span> | 
+                    Rekord: <span id="highScore" class="text-warning fw-bold">0</span>
+                </div>
+
+                <div class="my-4">
+                    <button class="btn btn-light rounded-pill px-4 shadow-sm me-2" onclick="prevCard()">Prethodno</button>
+                    <button class="btn btn-light rounded-pill px-4 shadow-sm" onclick="nextCard()">Sledeće</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="JavaScript/script.js"></script>
+</body>
+</html>
