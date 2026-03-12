@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap');
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background: linear-gradient(135deg, #f0f9f6 0%, #d4f3e7 100%);
+    min-height: 750px;
+}
+
+.navbar .nav-link {
+    color: #2d3436 !important;
+    text-transform: uppercase;
+    font-size: 13.6px;
+    letter-spacing: 1px;
+    margin: 0 15px;
+    font-weight: 600;
+}
+
+.navbar .nav-link.active {
+    color: #198754 !important;
+}
+
+.subject-card {
+    background: white;
+    border-radius: 25px;
+    padding: 40px 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid rgba(0,0,0,0.02);
+}
+
+.icon-wrapper {
+    width: 80px;
+    height: 80px;
+    background: #f8fdfb;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 35px;
+    margin-bottom: 20px;
+}
+
+.subject-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(25, 135, 84, 0.1);
+}
+
+.arrow-btn {
+    padding-top: 15px;
+    color: #c1e7d8;
+    font-size: 20px;
+    transition: 0.3s;
+}
+
+.subject-card:hover .arrow-btn {
+    color: #198754;
+    transform: translateX(5px);
+}
+
+.card-flip { 
+    width: 100%; 
+    max-width: 450px; 
+    height: 280px; 
+    cursor: pointer;
+}
+
+.card-inner { 
+    width: 100%; 
+    height: 100%; 
+    transition: transform 0.6s; 
+    transform-style: preserve-3d; 
+    position: relative; 
+}
+
+.card-inner.flipped { 
+    transform: rotateY(180deg); 
+}
+
+.card-front, .card-back {
+    position: absolute; width: 100%; height: 100%; border-radius: 30px;
+    display: flex; justify-content: center; align-items: center;
+    font-size: 24px; font-weight: 700; 
+    backface-visibility: hidden;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+    padding: 30px;
+}
+
+.card-front { 
+    background: white; 
+    color: #2d3436; 
+    border: 1px solid #edf7f3; 
+}
+.card-back { 
+    background: #ffd166; 
+    color: #2d3436; 
+    transform: rotateY(180deg); 
+}
+
+.progress-bar { 
+    background-color: #ffd166 !important; 
+    border-radius: 10px; 
+    transition: 0.4s; 
+}
+
+#userAnswer:focus {
+    box-shadow: 0 0 0 0.25rem rgba(255, 209, 102, 0.2) !important;
+    border: none;
+}
